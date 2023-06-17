@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import addCommasToNumber from "../utils/addCommas";
 import { BsBookmark } from "react-icons/bs";
+import { sliceText } from "../utils/sliceText";
 
 function Tag({ link, topPos, leftPos, title, price, image }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +58,7 @@ function Tag({ link, topPos, leftPos, title, price, image }) {
           }}
         ></div>
         <div className="productTitleSection">
-          <p className="productTitle">{title}</p>
+          <p className="productTitle">{sliceText(title)}</p>
 
           <p className="priceText">$ {addCommasToNumber(Math.round(price))}</p>
         </div>
