@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import addCommasToNumber from "../utils/addCommas";
 import { BsBookmark } from "react-icons/bs";
 
-function Tag({ topPos, leftPos, title, price, image }) {
+function Tag({ link, topPos, leftPos, title, price, image }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
@@ -84,7 +84,9 @@ function Tag({ topPos, leftPos, title, price, image }) {
             className="buyButton solid"
           >
             <img src="./linkIcon.svg" alt="" />
-            <p>Buy now</p>
+            <a href={link} target="_blank" rel="noreferrer">
+              Buy now
+            </a>
           </div>
           <div
             onClick={(e) => {

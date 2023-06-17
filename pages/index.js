@@ -163,6 +163,7 @@ export default function Home() {
                   delay={i}
                   leftPos={tag.x * 100}
                   topPos={tag.y * 100}
+                  link={tag.productLink}
                   // leftPos={coordinates.x}
                   // topPos={coordinates.y}
                   // id={tag.product_id}
