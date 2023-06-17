@@ -1,0 +1,30 @@
+.tag {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  /* border: 1px solid red; */
+  background-color: #fff;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .tag.open {
+  width: 450px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: transparent;
+  opacity: 0.6;
+  border: 2px solid red;
+} */
+
+.tagText {
+  display: none;
+  transition: all ease 0.5s;
+}
+
+.tagText.open {
+  display: block;
+}
