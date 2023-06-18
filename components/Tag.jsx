@@ -77,18 +77,19 @@ function Tag({ link, topPos, leftPos, title, price, image }) {
             <BsBookmark color="#53389E" fontSize="20px" />
             <span className="wishlistText">Add to wishlist</span>
           </div> */}
-          <div
+          <a
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(false);
             }}
             className="buyButton solid"
+            href={link}
+            target="_blank"
+            rel="noreferrer"
           >
             <img src="./linkIcon.svg" alt="" />
-            <a href={link} target="_blank" rel="noreferrer">
-              Buy now
-            </a>
-          </div>
+            <p>Buy now</p>
+          </a>
           <div
             onClick={(e) => {
               e.stopPropagation();
