@@ -4,7 +4,7 @@ import addCommasToNumber from "../utils/addCommas";
 import { BsBookmark } from "react-icons/bs";
 import { sliceText } from "../utils/sliceText";
 
-function Tag({ link, topPos, leftPos, title, price, image }) {
+function Tag({ link, topPos, leftPos, title, price, image, id }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
@@ -20,9 +20,51 @@ function Tag({ link, topPos, leftPos, title, price, image }) {
     }
   }, [isOpen]);
 
+  const checkTagClosenessToContainer = () => {
+    const container = document.getElementById("previewVideo");
+    const movable = document.getElementById(id);
+
+    const containerRect = container.getBoundingClientRect();
+    const movableRect = movable.getBoundingClientRect();
+    // console.log(containerRect, movableRect);
+    const threshold = 250; // Adjust this value to define the desired closeness threshold
+
+    const isCloseToTop = movableRect.top - containerRect.top <= threshold;
+    const isCloseToLeft = movableRect.left - containerRect.left <= threshold;
+    const isCloseToRight = containerRect.right - movableRect.right <= threshold;
+    const isCloseToBottom =
+      containerRect.bottom - movableRect.bottom <= threshold;
+    // console.log(isCloseToTop, isCloseToLeft, isCloseToRight, isCloseToBottom);
+    if (isCloseToTop) {
+      // console.log("close to top");
+      movable.style.top = movableRect.top + threshold + "px";
+    } else if (isCloseToBottom) {
+      // console.log("close to bottom");
+
+      movable.style.top = movableRect.top - threshold + "px";
+    }
+
+    if (isCloseToLeft) {
+      // console.log("close to left");
+
+      movable.style.left = movableRect.left + threshold + "px";
+    } else if (isCloseToRight) {
+      // console.log("close to right");
+
+      movable.style.left = movableRect.left - threshold + "px";
+    }
+  };
+
+  const closeTag = () => {
+    const movable = document.getElementById(id);
+    movable.style.left = `${leftPos}%`;
+    movable.style.top = `${topPos}%`;
+  };
+
   return (
     <div
       onClick={() => {
+        checkTagClosenessToContainer();
         setIsOpen(true);
       }}
       style={{
@@ -30,6 +72,7 @@ function Tag({ link, topPos, leftPos, title, price, image }) {
         left: `${leftPos}%`,
       }}
       className={`tag ${isOpen ? "open" : "circleTags"}`}
+      id={id}
     >
       <div
         onClick={(e) => e.stopPropagation()}
@@ -43,6 +86,7 @@ function Tag({ link, topPos, leftPos, title, price, image }) {
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(false);
+              closeTag();
             }}
             className="cancelBtn"
             src="./cancelIcon.svg"

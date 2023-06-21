@@ -5,7 +5,7 @@ function showTag(time, jsonArray) {
   // console.log(newLabels.label);
   // console.log(time);
   const currentTime = Math.round((time * 1000) / 500) * 500;
-  console.log(currentTime);
+  // console.log(currentTime);
 
   // let currentTime = Math.ceil(this.player.getCurrentTime() * 1000);
   // let currentTime = Math.ceil(this.player.getCurrentTime()) * 1000;

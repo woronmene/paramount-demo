@@ -17,7 +17,7 @@ export default function Home() {
   const [currentVideoWidth, setCurrentVideoWidth] = useState("");
   const [showOverlay, setShowOverlay] = useState(false);
 
-  console.log(currentVideoHeight, currentVideoWidth);
+  // console.log(currentVideoHeight, currentVideoWidth);
 
   useEffect(() => {
     const videoReference = document.getElementById("previewVideo");
@@ -96,6 +96,7 @@ export default function Home() {
       <div className="previewVideo">
         <div
           className="videoContainer"
+          id="videoContainer"
           style={
             isPortrait
               ? videoContainerPortraitStyles
@@ -108,7 +109,9 @@ export default function Home() {
                 document.getElementById("previewVideo").play();
               }}
               className="overlay"
-            ></div>
+            >
+              Yellow Jackets
+            </div>
           )}
           <video
             // src="/em.mp4"
@@ -136,7 +139,8 @@ export default function Home() {
             }}
           >
             <source
-              src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/reel.mp4?alt=media&token=a37c77ea-18fd-4484-87f7-3bd8c45abf84"
+              src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/Yellowjacketcut1.mkv?alt=media&token=0e3d09d0-707d-4fb9-b6ee-622de55b19a5"
+              // src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/reel.mp4?alt=media&token=a37c77ea-18fd-4484-87f7-3bd8c45abf84"
               type="video/mp4"
             ></source>
           </video>
@@ -169,7 +173,7 @@ export default function Home() {
                   // id={tag.product_id}
                   // title={tag.label}
                   // price={tag.price}
-                  id={tag.product_id}
+                  id={i}
                   title={tag.label}
                   price={tag.price}
                   image={tag.image}

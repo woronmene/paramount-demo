@@ -39,7 +39,7 @@ a {
   width: 97vw;
   /* height: 50vw; */
   /* aspect-ratio: 1; */
-  border: 1px solid rgba(255, 255, 255, 0.361);
+  /* border: 1px solid rgba(255, 255, 255, 0.361); */
 }
 
 .videoContainer {
@@ -66,6 +66,9 @@ a {
   width: 100%;
   height: 100%;
   background-color: #00000077;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 video {
@@ -84,7 +87,8 @@ video {
   border-radius: 30px;
   background-color: #fff;
   cursor: pointer;
-  transition: width ease 0.5s, height ease 0.5s;
+  transition: all ease 0.5s;
+  /* transition: width ease 0.5s, height ease 0.5s; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,26 +103,13 @@ video {
 }
 
 .tag.open {
-  /* width: 146px;
-  height: 212.27px; */
   width: 285px;
   height: 434px;
-  /* aspect-ratio: 284/434; */
   padding-bottom: 22px;
   padding-top: 10px;
-  /* height: 380px; */
-  /* height: auto; */
-  /* padding: 15px 2px 25px 2px; */
   border-radius: 20px;
   background: #fff;
   z-index: 1;
-
-  /* border-radius: 16px; */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px); */
-  /* background-color: transparent; */
-  /* opacity: 0.9; */
 }
 
 .tagContent {
@@ -222,7 +213,7 @@ video {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  /* border: 1px solid red; */
+
   gap: 10px;
 }
 
@@ -245,6 +236,18 @@ video {
   align-items: center;
   justify-content: center;
 }
+
+.buyButton img {
+  position: absolute;
+  left: 60px;
+}
+/* 
+.buyButtonContent {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  border: 2px solid red;
+} */
 
 .buyButton:hover {
   opacity: 0.8;
