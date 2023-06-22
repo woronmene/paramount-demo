@@ -164,7 +164,7 @@ export default function Home() {
             }}
           >
             <source
-              src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/Yellowjacketcut1.mkv?alt=media&token=0e3d09d0-707d-4fb9-b6ee-622de55b19a5"
+              src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/YellowJacketCut1%20.mp4?alt=media&token=e754f09e-038f-45cb-8c5b-566ce2c03301"
               // src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/reel.mp4?alt=media&token=a37c77ea-18fd-4484-87f7-3bd8c45abf84"
               type="video/mp4"
             ></source>
