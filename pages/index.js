@@ -162,6 +162,9 @@ export default function Home() {
               handleShowTag(e);
               setShowOverlay(true);
             }}
+            onSeeked={() => {
+              handlePlay();
+            }}
           >
             <source
               src="https://firebasestorage.googleapis.com/v0/b/reddit-clone-49ba5.appspot.com/o/YellowJacketCut1%20.mp4?alt=media&token=e754f09e-038f-45cb-8c5b-566ce2c03301"
