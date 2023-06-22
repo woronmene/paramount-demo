@@ -47,11 +47,11 @@ function Tag({ link, topPos, leftPos, title, price, image, id }) {
     if (isCloseToLeft) {
       // console.log("close to left");
 
-      movable.style.left = movableRect.left + threshold + "px";
+      movable.style.left = movableRect.left + 100 + "px";
     } else if (isCloseToRight) {
       // console.log("close to right");
 
-      movable.style.left = movableRect.left - threshold + "px";
+      movable.style.left = movableRect.left - 100 + "px";
     }
   };
 

@@ -110,7 +110,7 @@ export default function Home() {
               }}
               className="overlay"
             >
-              Yellow Jackets
+              Yellow Jackets | Paramount+
             </div>
           )}
           <video
