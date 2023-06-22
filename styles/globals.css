@@ -45,6 +45,7 @@ a {
 .videoContainer {
   margin: 0 auto;
   position: relative;
+  /* border: 1px solid red; */
 }
 /* .tag {
   width: 20px;
@@ -302,4 +303,13 @@ video {
 
 .fade-up {
   animation: fadeUp 0.5s ease-out;
+}
+
+.warningMessage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
 }

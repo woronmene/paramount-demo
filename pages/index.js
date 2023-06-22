@@ -17,6 +17,23 @@ export default function Home() {
   const [currentVideoWidth, setCurrentVideoWidth] = useState("");
   const [showOverlay, setShowOverlay] = useState(false);
 
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // Adjust the width threshold as needed
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Initial check on component mount
+    handleResize();
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // console.log(currentVideoHeight, currentVideoWidth);
 
   useEffect(() => {
@@ -84,6 +101,14 @@ export default function Home() {
     // return { x: x.toString(), y: y.toString() };
     // return <Tag leftPos="50" topPos="70" title="shirt" price="500" />;
   }; // };
+
+  if (!isDesktop) {
+    return (
+      <div className="warningMessage">
+        <p>Please use a desktop device to access this application.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
